@@ -304,7 +304,7 @@ export module Matching {
                 var res:CallPath = this.doMatch(call.expression);
                 if (res) {
                     if (res.path.length > 0 && res.path[res.path.length - 1].arguments == null) {
-                        res.path[res.path.length - 1].arguments = call.arguments;
+                        res.path[res.path.length - 1].arguments = call.arguments.slice(0);
                         res.path[res.path.length - 1]._callExpression=call;
                         return res;
                     }
